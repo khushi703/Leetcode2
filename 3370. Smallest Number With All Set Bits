@@ -1,0 +1,22 @@
+class Solution {
+    public int smallestNumber(int n) {
+        int bitmask = 1; 
+        int count = 0;
+        int ans = 0;
+        while(n!=0)
+        {
+            if((n & bitmask) == 0)
+            {
+                n = n | 1;
+
+            }
+            count++;
+            n = n >> 1;
+        }
+        for( int i=0;i<count;i++)
+        {
+            ans = ans +(int) Math.pow(2,i);
+        }
+        return ans; 
+    }
+}
